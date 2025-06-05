@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from './supabaseClient'
 import './App.css'
 import { SplashScreen } from './SplashScreen';
@@ -72,7 +72,7 @@ function App() {
       <div style={{ flex: 1, padding: 16 }}>
         {tab === 'home' && <HomeTab user={user} />}
         {tab === 'add' && <AddTab user={user} />}
-        {tab === 'settings' && <SettingsTab user={user} />}
+        {tab === 'settings' && <SettingsTab />}
       </div>
       <nav style={{ display: 'flex', borderTop: '1px solid #eee', background: '#fafafa' }}>
         <TabButton label="Home" active={tab === 'home'} onClick={() => setTab('home')} />
@@ -181,7 +181,7 @@ function AddTab({ user }: { user: any }) {
   );
 }
 
-function SettingsTab({ user }: { user: any }) {
+function SettingsTab() {
   return <div>Settings (family linking, etc. coming soon)</div>;
 }
 
